@@ -1,5 +1,12 @@
+import Header from './components/header/Header';
+import { ThemeProvider } from './context/ThemeContext';
+
 function App() {
-  return <div className="App"></div>;
+  return (
+    <ThemeProvider>
+      <Header></Header>
+    </ThemeProvider>
+  );
 }
 
 export default App;
