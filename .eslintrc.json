@@ -20,7 +20,8 @@
       "node": {
         "paths": ["src"],
         "extensions": [".ts", ".tsx"]
-      }
+      },
+      "typescript": {}
     }
   },
   "rules": {
