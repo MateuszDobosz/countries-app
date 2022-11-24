@@ -8,7 +8,7 @@ const Header: FunctionComponent = () => {
   return (
     <header className={`header ${colorMode}`}>
       <div className="header__container">
-        <h1 className="header__title">Where in the world?</h1>
+        <h1 className="header__title">Where in the world? 🚀</h1>
         <button className="header__color-mode-toggle" onClick={toggleTheme}>
           <span>
             <FaMoon />

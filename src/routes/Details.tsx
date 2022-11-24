@@ -1,9 +1,20 @@
 import { FunctionComponent } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { HiOutlineArrowNarrowLeft } from 'react-icons/hi';
+import './index.scss';
+import NavButton from '../components/navButton/NavButton';
+import CountryDetails from '../components/countryDetails/CountryDetails';
 
 const DetailsRoute: FunctionComponent = () => {
   const { id } = useParams();
-  return <div>Hello details {id}</div>;
+  return (
+    <div className="main-container">
+      <NavButton to="/">
+        <HiOutlineArrowNarrowLeft /> Back
+      </NavButton>
+      <CountryDetails />
+    </div>
+  );
 };
 
 export default DetailsRoute;

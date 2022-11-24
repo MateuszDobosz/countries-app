@@ -1,0 +1,33 @@
+@import '../../styles/colors';
+
+.country {
+  width: 100%;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr;
+  &__flag {
+    width: 100%;
+    box-shadow: $shadow-border;
+    border-radius: 5px;
+  }
+
+  @media (min-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  &__content {
+    h2 {
+      margin: 20px 0;
+    }
+  }
+
+  &__borders {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+div[class='country dark'] {
+  color: map-get($light, white);
+}

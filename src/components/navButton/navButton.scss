@@ -1,0 +1,31 @@
+@import '../../styles/colors';
+@import '../../styles/typhography';
+
+.link {
+  text-decoration: none;
+  display: block;
+  margin: 40px 0;
+  width: 100px;
+  button {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 100%;
+    vertical-align: middle;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    font-size: $font-size-m;
+    color: map-get($dark, veryDarkBlueText);
+    background-color: map-get($light, white);
+    box-shadow: $shadow-border;
+    border-radius: 5px;
+  }
+}
+
+a[class='link dark'] {
+  button {
+    background-color: map-get($dark, darkBlue);
+    color: map-get($light, white);
+  }
+}

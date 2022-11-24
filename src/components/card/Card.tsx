@@ -16,7 +16,7 @@ const Card: FunctionComponent<CardProps> = ({ flag, name, population, region, ca
   return (
     <Link to={`details/${name}`}>
       <div className={`card ${colorMode}`}>
-        <img className="card__flag" src={flag}></img>
+        <img className="card__flag" src={flag} alt={`${name} flag`}></img>
         <div className="card__content">
           <h2 className="card__name">{name}</h2>
           <p className="card__data">

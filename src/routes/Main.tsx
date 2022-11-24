@@ -1,16 +1,12 @@
 import { FunctionComponent } from 'react';
 import CardsContainer from '../components/cardsContainer/CardsContainer';
-import SearchBar from '../components/searchBar/SearchBar';
-import Select from '../components/select/Select';
-import './Main.scss';
+import InputsContainer from '../components/inputsContainer/InputsContainer';
+import './index.scss';
 
 const MainRoute: FunctionComponent = () => {
   return (
     <div className="main-container">
-      <div className="inputs-container">
-        <SearchBar />
-        <Select />
-      </div>
+      <InputsContainer />
       <CardsContainer />
     </div>
   );
