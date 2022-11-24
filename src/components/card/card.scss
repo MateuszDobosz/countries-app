@@ -1,0 +1,44 @@
+@import '../../styles/colors';
+@import '../../styles/typhography';
+
+a {
+  text-decoration: none;
+}
+.card {
+  border-radius: 5px;
+  box-shadow: $shadow-border;
+  width: 300px;
+  background-color: map-get($light, white);
+  color: map-get($dark, darkBlue);
+  cursor: pointer;
+  &__flag {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0 4px 2px -3px gray;
+  }
+
+  &__content {
+    padding: 20px 20px 40px;
+    font-size: $font-size-s;
+    font-weight: $font-weight-light;
+    b {
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  &__name {
+    margin: 10px 0;
+    font-size: $font-size-m;
+    font-weight: $font-weight-bold;
+  }
+}
+.card:hover {
+  transform: scale(1.05);
+}
+[class='card dark'] {
+  background-color: map-get($dark, darkBlue);
+  color: map-get($light, white);
+}

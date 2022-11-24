@@ -1,12 +1,13 @@
 @import '../../styles/colors';
 @import '../../styles/typhography';
 .header {
-  box-shadow: 0px 1px 7px -2px rgba(66, 68, 90, 1);
+  background-color: map-get($light, white);
+  box-shadow: $shadow-border;
   &__container {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1400px;
     padding: 24px 20px;
     margin: 0 auto;
   }
@@ -26,11 +27,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
+  }
+  &__color-mode-toggle:focus,
+  &__color-mode-toggle:focus-visible {
+    outline: none;
   }
 }
 
 .dark {
-  background-color: hsl(207, 26%, 17%);
+  background-color: map-get($dark, darkBlue);
 
   .header__title,
   .header__color-mode-toggle {
