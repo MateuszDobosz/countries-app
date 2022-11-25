@@ -5,7 +5,7 @@ import { useTheme } from '../../context/ThemeContext';
 import './searchBar.scss';
 
 const SearchBar: FunctionComponent = () => {
-  const { query, setQuery } = useQuery();
+  const [query, setQuery] = useQuery();
   const { colorMode } = useTheme();
   return (
     <div className={`wrapper ${colorMode}`}>

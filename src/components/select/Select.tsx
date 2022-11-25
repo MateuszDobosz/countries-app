@@ -4,7 +4,7 @@ import { useTheme } from '../../context/ThemeContext';
 import './select.scss';
 
 const Select: FunctionComponent = () => {
-  const { region, setRegion } = useRegion();
+  const [region, setRegion] = useRegion();
   const { colorMode } = useTheme();
   return (
     <select className={`region-select ${colorMode}`} value={region} onChange={(e) => setRegion(e.target.value)}>

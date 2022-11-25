@@ -1,18 +1,14 @@
 import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react';
 
-export type RegionContextType = {
-  region: string;
-  setRegion: Dispatch<SetStateAction<string>>;
-};
-
-export const RegionContext = createContext<RegionContextType>({ region: '', setRegion: (obj) => obj });
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+export const RegionContext = createContext<[string, Dispatch<SetStateAction<string>>]>(['', () => {}]);
 
 export function useRegion() {
   return useContext(RegionContext);
 }
 
 export function RegionProvider({ children }: { children: ReactNode }) {
-  const [region, setRegion] = useState('');
+  const regionState = useState('');
 
-  return <RegionContext.Provider value={{ region, setRegion }}>{children}</RegionContext.Provider>;
+  return <RegionContext.Provider value={regionState}>{children}</RegionContext.Provider>;
 }

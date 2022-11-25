@@ -1,18 +1,14 @@
 import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react';
 
-export type QueryContextType = {
-  query: string;
-  setQuery: Dispatch<SetStateAction<string>>;
-};
-
-export const QueryContext = createContext<QueryContextType>({ query: '', setQuery: (obj) => obj });
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+export const QueryContext = createContext<[string, Dispatch<SetStateAction<string>>]>(['', () => {}]);
 
 export function useQuery() {
   return useContext(QueryContext);
 }
 
 export function QueryProvider({ children }: { children: ReactNode }) {
-  const [query, setQuery] = useState('');
+  const queryState = useState('');
 
-  return <QueryContext.Provider value={{ query, setQuery }}>{children}</QueryContext.Provider>;
+  return <QueryContext.Provider value={queryState}>{children}</QueryContext.Provider>;
 }

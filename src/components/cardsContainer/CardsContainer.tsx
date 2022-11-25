@@ -14,8 +14,8 @@ export interface ICountry {
 
 const CardsContainer: FunctionComponent = () => {
   const [countries, setCountries] = useState<ICountry[]>([]);
-  const { region } = useRegion();
-  const { query } = useQuery();
+  const [region] = useRegion();
+  const [query] = useQuery();
   useEffect(() => {
     async function fetchCountries() {
       const data = await fetch(`https://restcountries.com/v3.1/all`);
