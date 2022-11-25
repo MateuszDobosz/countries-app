@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeContextType, useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 import './navButton.scss';
 
 interface NavButtonProps {
@@ -9,7 +9,7 @@ interface NavButtonProps {
 }
 
 const NavButton: FunctionComponent<NavButtonProps> = ({ to, children }) => {
-  const { colorMode } = useTheme() as ThemeContextType;
+  const { colorMode } = useTheme();
   return (
     <Link to={to} className={`link ${colorMode}`}>
       <button>{children}</button>

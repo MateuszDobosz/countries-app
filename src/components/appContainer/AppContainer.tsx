@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactNode } from 'react';
-import { ThemeContextType, useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 import './appContainer.scss';
 
 interface AppContainerProps {
@@ -7,7 +7,7 @@ interface AppContainerProps {
 }
 
 const AppContainer: FunctionComponent<AppContainerProps> = ({ children }: AppContainerProps) => {
-  const { colorMode } = useTheme() as ThemeContextType;
+  const { colorMode } = useTheme();
   return <div className={`app ${colorMode}`}>{children}</div>;
 };
 

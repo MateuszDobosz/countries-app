@@ -1,11 +1,11 @@
 import { FunctionComponent } from 'react';
-import { RegionContextType, useRegion } from '../../context/RegionContext';
-import { ThemeContextType, useTheme } from '../../context/ThemeContext';
+import { useRegion } from '../../context/RegionContext';
+import { useTheme } from '../../context/ThemeContext';
 import './select.scss';
 
 const Select: FunctionComponent = () => {
-  const { region, setRegion } = useRegion() as RegionContextType;
-  const { colorMode } = useTheme() as ThemeContextType;
+  const { region, setRegion } = useRegion();
+  const { colorMode } = useTheme();
   return (
     <select className={`region-select ${colorMode}`} value={region} onChange={(e) => setRegion(e.target.value)}>
       <option value="" disabled>

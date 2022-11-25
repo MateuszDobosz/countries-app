@@ -4,7 +4,8 @@ export type ThemeContextType = {
   colorMode: string;
   toggleTheme: () => void;
 };
-export const ThemeContext = createContext<ThemeContextType | null>(null);
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+export const ThemeContext = createContext<ThemeContextType>({ colorMode: '', toggleTheme: () => {} });
 
 export function useTheme() {
   return useContext(ThemeContext);

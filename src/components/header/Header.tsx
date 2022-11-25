@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
-import { ThemeContextType, useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 import { FaMoon } from 'react-icons/fa';
 import './header.scss';
 
 const Header: FunctionComponent = () => {
-  const { colorMode, toggleTheme } = useTheme() as ThemeContextType;
+  const { colorMode, toggleTheme } = useTheme();
   return (
     <header className={`header ${colorMode}`}>
       <div className="header__container">

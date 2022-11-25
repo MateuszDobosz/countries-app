@@ -1,6 +1,6 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ThemeContextType, useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 import { ICountry } from '../cardsContainer/CardsContainer';
 import NavButton from '../navButton/NavButton';
 import './countryDetails.scss';
@@ -18,7 +18,7 @@ export interface ICountryDetails extends ICountry {
 const CountryDetails: FunctionComponent = () => {
   const { name } = useParams();
   const [country, setCountry] = useState<ICountryDetails | null>(null);
-  const { colorMode } = useTheme() as ThemeContextType;
+  const { colorMode } = useTheme();
   useEffect(() => {
     async function fetchCountry(name: string) {
       const data = await fetch(`https://restcountries.com/v3.1/name/${name}`);

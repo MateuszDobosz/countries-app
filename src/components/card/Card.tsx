@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeContextType, useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 import './card.scss';
 
 interface CardProps {
@@ -12,7 +12,7 @@ interface CardProps {
 }
 
 const Card: FunctionComponent<CardProps> = ({ flag, name, population, region, capital }) => {
-  const { colorMode } = useTheme() as ThemeContextType;
+  const { colorMode } = useTheme();
   return (
     <Link to={`details/${name}`}>
       <div className={`card ${colorMode}`}>

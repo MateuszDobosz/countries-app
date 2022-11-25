@@ -5,7 +5,7 @@ export type RegionContextType = {
   setRegion: Dispatch<SetStateAction<string>>;
 };
 
-export const RegionContext = createContext<RegionContextType | null>(null);
+export const RegionContext = createContext<RegionContextType>({ region: '', setRegion: (obj) => obj });
 
 export function useRegion() {
   return useContext(RegionContext);

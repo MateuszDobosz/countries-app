@@ -5,7 +5,7 @@ export type QueryContextType = {
   setQuery: Dispatch<SetStateAction<string>>;
 };
 
-export const QueryContext = createContext<QueryContextType | null>(null);
+export const QueryContext = createContext<QueryContextType>({ query: '', setQuery: (obj) => obj });
 
 export function useQuery() {
   return useContext(QueryContext);

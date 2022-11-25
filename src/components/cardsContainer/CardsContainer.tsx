@@ -1,6 +1,6 @@
 import { FunctionComponent, useEffect, useState } from 'react';
-import { QueryContextType, useQuery } from '../../context/QueryContext';
-import { RegionContextType, useRegion } from '../../context/RegionContext';
+import { useQuery } from '../../context/QueryContext';
+import { useRegion } from '../../context/RegionContext';
 import Card from '../card/Card';
 import './cardsContainer.scss';
 
@@ -14,8 +14,8 @@ export interface ICountry {
 
 const CardsContainer: FunctionComponent = () => {
   const [countries, setCountries] = useState<ICountry[]>([]);
-  const { region } = useRegion() as RegionContextType;
-  const { query } = useQuery() as QueryContextType;
+  const { region } = useRegion();
+  const { query } = useQuery();
   useEffect(() => {
     async function fetchCountries() {
       const data = await fetch(`https://restcountries.com/v3.1/all`);
